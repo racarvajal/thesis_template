@@ -1,0 +1,338 @@
+%% Set the page dimensions, font dimensions, and tells LaTeX to use the class "mythesis.cls" which contains your particular stylistic choices for the thesis.
+\documentclass[12pt]{mythesis}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%% This loads the font Palatino for both text and math modes. There is a webpage listing all the available fonts, but I don't remember it now.
+% \usepackage[sc]{mathpazo}
+\linespread{1.5}   %% Space between lines of text
+
+% Loads text fonts
+%\usepackage{newtxtext,newtxmath}
+%\usepackage{tgpagella}
+%\usepackage{charter}
+
+%% All the languages you need go here
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,english]{babel}  % Last one listed is the one initially used
+\usepackage[T1]{fontenc}
+\addto\captionsenglish{% Replace "english" with the language you use
+        \renewcommand{\contentsname}{CONTENTS}  % rename 'Contents'
+        \renewcommand{\listfigurename}{LIST OF FIGURES}  % rename 'List of Figures' in TOC
+        \renewcommand{\listtablename}{LIST OF TABLES}  % rename 'List of Tables' in TOC
+}
+%\usepackage{showframe}   %% just for demo; it shows page frames
+\usepackage{kantlipsum}   %% just for demo; adds blindtext
+
+% To make cites and references
+\usepackage[hidelinks,pdfusetitle,pdfdisplaydoctitle]{hyperref} %If you want clickable links in the .pdf file
+
+%% Bibliography at the end of the thesis:
+\usepackage[natbib=true,sorting=nyt,backend=biber,maxcitenames=2,maxbibnames=5,minbibnames=3,mincitenames=1,style=authoryear,sortcites=false]{biblatex}
+\addbibresource{Thesis.bib}
+%% If you need one bibliography per chapter add the following at the end of each chapter
+%\printbibliography[heading=subbibintoc]
+
+\usepackage{csquotes}  % Quotation marks management
+\usepackage{doi}  % Add DOI to bibliography
+\renewcommand{\doitext}{} % to make doi addresses links
+
+\usepackage{graphicx}
+% Use next block only to replace images (floats) for 150x100pt frames
+%\makeatletter
+%  \AtBeginDocument{%
+%    \def\Ginclude@graphics#1{%
+%      \begingroup\fboxsep=-\fboxrule
+%      \fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
+%        \rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
+%\makeatother
+
+%% The following two lines ensure that you set your page dimensions and margins *exactly* for a University requirements.
+\usepackage{geometry}
+\geometry{left=4cm,right=2.5cm,top=4cm,bottom=2.5cm,heightrounded}
+\usepackage{fix-cm}  % Helps in fixing paging issues
+\usepackage[page,toc,title,header]{appendix} %Extremely useful if you need appendices in some of the chapters, otherwise they will not be numbered properly!
+\renewcommand{\appendixtocname}{APPENDICES}  % rename 'Appendices' in TOC
+\usepackage{amssymb}
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{latexsym, txfonts}
+% Useful in tables and alignment
+\usepackage{siunitx}
+\sisetup{table-figures-uncertainty=1,table-alignment=center}
+%\let\oldAA\AA
+%\renewcommand{\AA}{\text{\normalfont\oldAA}}
+%\DeclareMathOperator{\adj}{adj}
+\usepackage{aas_macros}  % Journals naming
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage[font=small]{caption}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.5}
+\usepackage{pdflscape}
+\usepackage[shortlabels]{enumitem}
+% Indentation for first line of Chapter
+\usepackage{indentfirst}
+
+% Bibliography to the TOC
+\usepackage[nottoc]{tocbibind}
+% Fonts
+\usepackage{afterpage}
+\usepackage{antpolt}
+% To add to-do notes and comment blocks
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{comment}
+% To make pretty tables
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\hfuzz=6.001pt
+% Floats
+\usepackage{float}
+\restylefloat{figure}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+% To obtain dates with letters
+\usepackage{datetime}
+\makeatletter
+\newcommand\Romanyear{\@Roman{\year}}
+\makeatother
+
+% To show subsubsections in TOC
+\setcounter{tocdepth}{3}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% Citation aliases
+\defcitealias{2017MNRAS.472..483F}{F17}
+\defcitealias{2018MNRAS.476.3991M}{M18}
+\defcitealias{2014MNRAS.437.1268H}{H14}
+\defcitealias{2016ApJ...833...72B}{B16}
+\defcitealias{1999ApJ...521...64M}{M99}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Start the document   %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Page with only title and author. No logos, or other text  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{VERY IMPORTANT THESIS TITLE}
+\shorttitle{SHORT TITLE}
+\author{Full Student Name}
+\date{}
+\maketitle
+%% Leave a blank page
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        FRONTPAGE       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This should still be the same, but you can check it later. Of course you'll have to change your name, date of defense, date and place of birth, etc...
+\selectlanguage{english}
+\newpage
+\pagestyle{empty}
+\vspace*{-40.0mm}% shif left half 13mm-off-margin
+\hspace*{-10mm}% shif left half 13mm-off-margin
+        \parbox{80pt}
+{\centering %\rule[0em]{80pt}{1ex}\\
+            \includegraphics*[width=65mm]{./figures/UC_lineal_TR-01.png}\\[.2\normalbaselineskip]       
+        }
+\begin{flushright}
+\vspace*{-9.0mm}
+FACULTAD DE F\'{I}SICA\\
+INSTITUTO DE ASTROF\'{I}SICA
+\end{flushright}
+\begin{center}
+\huge{VERY IMPORTANT THESIS TITLE}\\
+\vspace{1.5cm}
+\normalsize
+BY\\
+\Large{FULL STUDENT NAME}\\
+\vspace{1.5cm}
+\normalsize
+Thesis submitted to the Faculty of Physics at\\ 
+Pontificia Universidad Cat\'{o}lica de Chile in partial fulfillment\\
+ of the requirements for the degree of \textit{DEGREE}\\
+\vspace{1.5cm}
+Thesis Advisor\\
+\large{Advising Professor}\\
+\vfill
+\normalsize
+Santiago de Chile, \monthname\, \the\year\\
+\vspace{1.cm}
+$\copyright$ \Romanyear, STUDENT NAME
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       COPYRIGHT (As asked by PUC)      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\newgeometry{twoside,left=4cm,right=2.5cm,top=4cm,bottom=2.5cm,heightrounded}
+\begin{center}
+\selectlanguage{spanish}
+\vspace*{0.25\textheight}
+Se autoriza la reproducci\'{o}n total o parcial, con fines\\ 
+acad\'{e}micos, por cualquier medio o procedimiento,\\ 
+incluyendo la cita bibliogr\'{a}fica del documento.
+\vspace*{\fill}
+\selectlanguage{english}
+\end{center}
+\newpage
+\makeatletter\@twosidefalse\makeatother
+\newgeometry{left=4cm,right=2.5cm,top=4cm,bottom=2.5cm,heightrounded}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%   EVALUATION PAGE  %
+%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{empty}
+\vspace*{-40.0mm}% shif left half 13mm-off-margin
+\hspace*{-10mm}% shif left half 13mm-off-margin
+        \parbox{80pt}
+{\centering %\rule[0em]{80pt}{1ex}\\
+            \includegraphics*[width=65mm]{./figures/UC_lineal_TR-01.png}\\[.2\normalbaselineskip]   
+        }
+\begin{flushright}
+\vspace*{-9.0mm}
+FACULTAD DE F\'{I}SICA\\
+INSTITUTO DE ASTROF\'{I}SICA
+\end{flushright}
+\begin{center}
+\huge{VERY IMPORTANT THESIS TITLE}\\
+\vspace{1.5cm}
+\normalsize
+BY\\
+\Large{FULL STUDENT NAME}\\
+\vspace{1.5cm}
+\vspace{1.cm}
+\normalsize Members of the Committee\\
+\vspace{.5cm}
+\parbox{250pt}{
+\large{Advising Professor \hfill (Institution A)\\
+Professor B \hfill (Institution B)\\
+Professor C \hfill (Institution C)\\}}
+\vfill
+\normalsize
+Santiago de Chile, \monthname\, \the\year\\
+\vspace{1.cm}
+$\copyright$ \Romanyear, STUDENT NAME
+\end{center}
+\newpage
+
+\null 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%       DEDICATION      %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{em}
+\begin{flushright}
+\selectlanguage{spanish}
+\vspace*{0.75\textheight}
+%\vfill
+\phantom{Dedicado a personas muy importantes.}
+\vspace*{\fill}
+\end{flushright}
+\hfill 
+\end{em}
+\selectlanguage{english}
+%\leaveblank
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           ACKNOWLEDGEMENTS           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagenumbering{roman}
+\phantomsection \label{acknowledgements} % Comment if hyperref is unused
+%\chapter*{ACKNOWLEDGEMENTS}           
+\include{./chapters/acknowledgments}
+
+% \cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Table of contents            %
+%            List of tables               %
+%            List of figures              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% What it does is to set the page numbering to Roman numbering (I. II. etc.)
+%\newpage
+\pagestyle{plain}
+
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\phantomsection \label{listoftables}
+\listoftables
+\phantomsection \label{listoffigures}
+\listoffigures
+%\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      page x & xi: ABSTRACT - RESUMEN        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{./chapters/abstract}
+\cleardoublepage
+
+\include{./chapters/resumen}
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%
+%   TEXT  OF THESIS  %
+%%%%%%%%%%%%%%%%%%%%%%
+%Switch to chapters, which means it switch back to standard arabic page numbering (1, 2, etc.)
+\newpage
+\pagenumbering{arabic}
+%% Include the chapters (which have to have the same filename plus the .tex extension)
+
+\include{./chapters/introduction}
+
+\include{./chapters/data}
+
+\include{./chapters/method}
+
+\include{./chapters/results}
+
+\include{./chapters/discussion}
+
+\include{./chapters/conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%       REFERENCES      %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+%\phantomsection 
+%\bibliographystyle{apacite}
+\renewcommand{\bibname}{REFERENCES}
+\pagestyle{myheadings}
+\markboth{REFERENCES}{REFERENCES} \label{references}
+{\footnotesize
+\printbibliography }
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%      APPENDICES      %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendices} % It is like a chapter, so each appendix (A, B, C...) must to be considered as a section
+
+\newpage
+
+\include{./chapters/appendix1}
+
+\clearpage
+
+\include{./chapters/appendix2}
+
+\end{appendices}
+
+\end{document}
