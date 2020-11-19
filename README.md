@@ -1,5 +1,5 @@
 # thesis_template
-$\LaTeX$ Thesis Template for Pontificia Universidad Católica de Chile (PUC).
+LaTeX Thesis Template for Pontificia Universidad Católica de Chile (PUC).
 Developed mostly for Graduate Thesis at Institute of Astrophysics.
 
 It includes a pdf file as an example output.
