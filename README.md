@@ -11,7 +11,7 @@ Original files from Heather Andrews and Camila Navarrete.
 
 Plantilla de Tesis para la Pontificia Universidad Católica de Chile (PUC) en LaTeX.
 Desarrollada principalmente para Tesis de postgrado en el Insituto de Astrofísica.
-Puede ser modificada para el uso en otras facultades o insitutos.
+Puede ser modificada para el uso en otras facultades o institutos.
 
 Incluye un archivo pdf como ejemplo.
 
