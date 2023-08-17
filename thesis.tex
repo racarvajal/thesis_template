@@ -29,6 +29,7 @@
 
 %% Bibliography at the end of the thesis:
 \usepackage[natbib=true,sorting=nyt,backend=biber,maxcitenames=2,maxbibnames=5,minbibnames=3,mincitenames=1,style=authoryear,sortcites=false]{biblatex}
+\renewcommand{\bibfont}{\normalfont\footnotesize}
 \addbibresource{Thesis.bib}
 %% If you need one bibliography per chapter add the following at the end of each chapter
 %\printbibliography[heading=subbibintoc]
@@ -312,8 +313,7 @@ $\copyright$ \Romanyear, STUDENT NAME
 \renewcommand{\bibname}{REFERENCES}
 \pagestyle{myheadings}
 \markboth{REFERENCES}{REFERENCES} \label{references}
-{\footnotesize
-\printbibliography } % Use \printbibliography[heading=bibintoc] to show bibliography in TOC
+\printbibliography % Use \printbibliography[heading=bibintoc] to show bibliography in TOC
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 %      APPENDICES      %
