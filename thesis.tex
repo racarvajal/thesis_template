@@ -5,7 +5,8 @@
 %\usepackage[utf8]{inputenc}
 %% This loads the font Palatino for both text and math modes. The website https://tug.org/FontCatalogue/ lists all the available fonts.
 % \usepackage[sc]{mathpazo}
-\linespread{1.5}   %% Space between lines of text
+%\linespread{1.5}   %% Space between lines of text
+\renewcommand{\baselinestretch}{1.5}   %% Space between lines of text
 
 % Loads text fonts
 %\usepackage{newtxtext,newtxmath}
@@ -28,7 +29,7 @@
 \usepackage[hidelinks,pdfusetitle,pdfdisplaydoctitle]{hyperref} %If you want clickable links in the .pdf file
 
 %% Bibliography at the end of the thesis:
-\usepackage[natbib=true,sorting=nyt,backend=biber,maxcitenames=2,maxbibnames=5,minbibnames=3,mincitenames=1,style=authoryear,sortcites=false]{biblatex}
+\usepackage[natbib=true,sorting=nyt,backend=biber,maxcitenames=2,maxbibnames=5,minbibnames=3,mincitenames=1,style=authoryear,sortcites=false,uniquename=false,uniquelist=false]{biblatex}
 \renewcommand{\bibfont}{\normalfont\footnotesize}
 \addbibresource{Thesis.bib}
 %% If you need one bibliography per chapter add the following at the end of each chapter
@@ -313,7 +314,8 @@ $\copyright$ \Romanyear, STUDENT NAME
 \renewcommand{\bibname}{REFERENCES}
 \pagestyle{myheadings}
 \markboth{REFERENCES}{REFERENCES} \label{references}
-\printbibliography % Use \printbibliography[heading=bibintoc] to show bibliography in TOC
+{\footnotesize
+\printbibliography} % Use \printbibliography[heading=bibintoc] to show bibliography in TOC
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 %      APPENDICES      %
