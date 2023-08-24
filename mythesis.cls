@@ -6,9 +6,8 @@
 
 
 %% FONTS
-
 %\renewcommand*\familydefault{\rmdefault}
-\renewcommand*{\sfdefault}{antpolt}
+\renewcommand*{\sfdefault}{\fontfamily{antpolt}\selectfont}
 %This is for the big numbers of the chapters
 \newcommand*{\numfont}{\fontfamily{antpolt}\selectfont} %pbk 
 %This is for the titles of the chapters
